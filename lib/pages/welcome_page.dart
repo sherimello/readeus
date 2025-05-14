@@ -1,21 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:readeus/pages/categories_page.dart';
-import 'package:readeus/view%20models/verse_view_model.dart';
+import 'package:readeus/pages/news_portals.dart';
 
 class WelcomePage extends StatelessWidget {
   const WelcomePage({super.key});
 
   @override
   Widget build(BuildContext context) {
-    NewsViewModel newsViewModel = Get.put(NewsViewModel());
     var size = MediaQuery.of(context).size;
     var appBarHeight = AppBar().preferredSize.height;
     var topPadding = MediaQuery.of(context).padding.top;
 
     return Scaffold(
       backgroundColor: Colors.black,
-      // backgroundColor: const Color(0xffECF7FE),
       body: SizedBox(
         width: size.width,
         height: size.height,
@@ -34,7 +31,6 @@ class WelcomePage extends StatelessWidget {
                 width: size.width,
                 height: size.height,
                 child: Column(
-                  // crossAxisAlignment: CrossAxisAlignment.stretch,
                   mainAxisSize: MainAxisSize.max,
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
@@ -44,7 +40,10 @@ class WelcomePage extends StatelessWidget {
                         mainAxisAlignment: MainAxisAlignment.end,
                         children: [
                           Image.asset("assets/images/icon.png"),
-                          Image.asset("assets/images/welcome_text.png", color: Colors.white,),
+                          Image.asset(
+                            "assets/images/welcome_text.png",
+                            color: Colors.white,
+                          ),
                           Image.asset("assets/images/readeus_text.png"),
                           const SizedBox(
                             height: 29,
@@ -53,8 +52,9 @@ class WelcomePage extends StatelessWidget {
                             "we reduce content into a\nreadable manner",
                             textAlign: TextAlign.center,
                             style: TextStyle(
-                              color: Colors.white,
-                                height: 0, fontSize: size.width * .051),
+                                color: Colors.white,
+                                height: 0,
+                                fontSize: size.width * .051),
                           ),
                           SizedBox(
                             height: topPadding,
@@ -67,7 +67,7 @@ class WelcomePage extends StatelessWidget {
                         child: Center(
                           child: GestureDetector(
                             onTap: () {
-                              Get.to(() => const CategoriesPage());
+                              Get.to(() => const NewsPortals());
                             },
                             child: Container(
                               width: size.width * .5,
@@ -80,12 +80,11 @@ class WelcomePage extends StatelessWidget {
                               child: Center(
                                 child: Text(
                                   "Lets Move",
-                                textAlign: TextAlign.center,
-                                style: TextStyle(
-                                  height: 0,
-                                  fontSize: size.width * .045,
-                                  color: Colors.white
-                                ),
+                                  textAlign: TextAlign.center,
+                                  style: TextStyle(
+                                      height: 0,
+                                      fontSize: size.width * .045,
+                                      color: Colors.white),
                                 ),
                               ),
                             ),
