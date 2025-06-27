@@ -24,7 +24,7 @@ class NewsDetails extends StatelessWidget {
       required this.timestamp});
 
 
-  Future<String> sendChatRequest(String query, bool imageGenerator) async {
+  Future<String> summarizeNews(String query, bool imageGenerator) async {
     print("------------------------------------------------$imageURL");
     // Replace with your FastAPI server URL
     const baseUrl = 'https://blackbox-cv4y.vercel.app/chat';
@@ -371,7 +371,7 @@ CNN Sans ™ & © 2016 Cable News Network.'''
                           height: 21,
                         ),
                         FutureBuilder<String>(
-                          future: sendChatRequest(
+                          future: summarizeNews(
                               "summarize the following paragraph and only return the summary without adding anything extra, also make sure it is a plain paragraph: \n${snapshot.data["body"]}",
                               false),
                           builder: (constext, snapshot) {

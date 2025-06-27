@@ -1,5 +1,4 @@
 import 'dart:async';
-import 'dart:convert';
 import 'dart:developer';
 import 'dart:math' hide log;
 import 'package:flutter/cupertino.dart';
@@ -9,14 +8,11 @@ import 'package:get/get.dart';
 import 'package:http/http.dart' as http;
 import 'package:html/dom.dart' as dom;
 import 'package:readeus/pages/news_details.dart';
-import 'package:readeus/pages/news_portals.dart';
 import 'package:readeus/view%20models/category_view_model.dart';
 import 'package:readeus/widgets/categories_list.dart';
 import 'package:readeus/widgets/custom_appbar.dart';
-import 'package:readeus/widgets/news_card_body.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:webview_flutter/webview_flutter.dart';
-import 'package:webview_flutter_android/webview_flutter_android.dart';
 
 import '../models/news_card.dart';
 import '../widgets/prothom_alo_news_scrapper.dart';
